@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from "react";
+import "./App.css";
+import "./styles.css";
+import axios from "axios";
 
 function App() {
+  const [advices, setAdvices] = useState("Hard work beats talent when talent doesn’t work hard.");
+
+  const fetchAdvice = () => {
+    axios
+      .get("https://api.adviceslip.com/advice")
+      .then((responce) => {
+        const { advice } = responce.data.slip;
+        setAdvices(advice);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="background">
+      <div className="backImg">
+        <h1 className="textcenter">{advices}</h1>
+        <button className="btn-submit" onClick={fetchAdvice}>submit</button>
+      </div>
     </div>
   );
 }
