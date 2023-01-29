@@ -4,7 +4,9 @@ import "./styles.css";
 import axios from "axios";
 
 function App() {
-  const [advices, setAdvices] = useState("Hard work beats talent when talent doesn’t work hard.");
+  const [advices, setAdvices] = useState(
+    "Hard work beats talent when talent doesn’t work hard."
+  );
 
   const fetchAdvice = () => {
     axios
@@ -17,13 +19,18 @@ function App() {
         console.log(error);
       });
   };
- 
 
   return (
     <div className="background">
       <div className="backImg">
-        <h1 className="textcenter">{advices}</h1>
-        <button className="btn-submit" onClick={fetchAdvice}>submit</button>
+        <div className="textSection">
+          <h2 className="textcenter">{advices}</h2>
+          <div className="button">
+          <button className="btn-submit" onClick={fetchAdvice}>
+          submit
+          </button>
+          </div>
+          </div>
       </div>
     </div>
   );

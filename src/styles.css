@@ -19,27 +19,68 @@
    
      
 }
+.textSection{
+    width: 80%;
+    margin: auto;
+}
 .textcenter{
-    /* width: 0%; */
     background-color: whitesmoke;
-    width: fit-content;
+    width: 80%;
+    margin: auto;
     height: fit-content;
     border-radius: 10px;
     box-shadow: 6px 6px rgba(0,0,0,0.5);
+    padding: 0 0.3rem;
+}
+.button{
+    width: 80%;
+    margin: auto;
 }
 .btn-submit{
-    margin-top: 1.5rem;
     width: 6rem;
-    height: 2.7rem;
+    height: 2rem;
+    margin: auto;
+    margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 8px;
     border: none;
     box-shadow: 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .btn-submit:hover{
-    background-color: rgb(109, 109, 170);
+    background-color:#4a69bd;
     border: none;
     font-size: 1.2rem;
+    cursor: pointer;
 }
+
+
+@media(max-width:850px){
+.textcenter{
+    padding: 0 1rem;
+}
+}
+
+@media(max-width:600px){
+    .textcenter{
+       font-size: 1.2rem;
+    }
+    }
+
+    @media(max-width:400px){
+        .textcenter{
+           font-size: 1rem;
+        }
+
+        .btn-submit{
+            font-size: 0.8rem;
+        }
+        .btn-submit:hover{
+            font-size: 1rem;
+        }
+        }
