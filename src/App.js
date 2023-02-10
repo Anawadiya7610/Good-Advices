@@ -27,7 +27,7 @@ function App() {
           <h2 className="textcenter">{advices}</h2>
           <div className="button">
           <button className="btn-submit" onClick={fetchAdvice}>
-          submit
+          Next
           </button>
           </div>
           </div>
